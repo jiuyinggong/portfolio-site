@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>旧缨宫 · 袁莉茹 · 3D 场景美术作品集</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%231d2126'/%3E%3Ctext x='16' y='22' font-size='16' text-anchor='middle' fill='%23c8a45c' font-family='sans-serif'%3E缨%3C/text%3E%3C/svg%3E" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: { paper: '#f2eee6', ink: '#20242a', bronze: '#9c6b2e' },
+          fontFamily: {
+            serif: ['"Source Han Serif SC"', '"Noto Serif SC"', 'Georgia', '"Songti SC"', 'serif'],
+            sans: ['"Microsoft YaHei"', '"PingFang SC"', '"Segoe UI"', 'system-ui', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#top">旧缨宫<span class="brand-sub">YUAN LIRU · PORTFOLIO</span></a>
+    <nav class="nav" aria-label="主导航">
+      <a href="#game">游戏项目</a>
+      <a href="#scene">场景作品</a>
+      <a href="#art">模型 / 角色</a>
+      <a href="#sculpt">ZBrush 雕刻</a>
+      <a href="#about">关于我</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section id="banner" class="relative h-[300px] md:h-[420px] overflow-hidden">
+      <div id="banner-bg" class="absolute inset-0 will-change-transform"></div>
+      <div class="banner-decor" aria-hidden="true">
+        <span class="decor-word">3D</span>
+        <span class="decor-dot dot-1"></span>
+        <span class="decor-dot dot-2"></span>
+        <span class="decor-dot dot-3"></span>
+      </div>
+      <img id="banner-character" class="banner-character" src="assets/media/banner-character.png" alt="旧缨宫 复古卡通形象" />
+      <div class="absolute inset-0" style="background: linear-gradient(to right, rgba(28,22,16,0.62) 0%, rgba(28,22,16,0.28) 50%, rgba(28,22,16,0) 76%)"></div>
+      <div class="banner-fade"></div>
+      <div class="relative z-10 h-full flex items-center px-6 md:px-14 w-full max-w-[62%] md:max-w-[620px] text-left">
+        <div>
+          <p class="banner-kicker">3D SCENE ARTIST · PERSONAL PORTFOLIO · 2028</p>
+          <h1 class="font-serif banner-title">旧缨宫</h1>
+          <p class="banner-real">袁莉茹 · 3D 场景美术</p>
+          <p class="banner-tag" id="hero-tagline"></p>
+          <p class="banner-meta" id="hero-meta"></p>
+          <div class="banner-actions">
+            <a href="#game" class="banner-btn banner-btn--primary">游戏项目</a>
+            <a href="#scene" class="banner-btn banner-btn--ghost">查看作品</a>
+            <a href="#about" class="banner-btn banner-btn--ghost">了解更多</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="game" class="section editorial">
+      <div class="section-head editorial-head">
+        <span class="section-no">01</span>
+        <div>
+          <h2>游戏项目</h2>
+          <p>引擎落地与美术 + 程序协作实践。</p>
+        </div>
+      </div>
+      <div id="game-list" class="editorial-list"></div>
+    </section>
+
+    <section id="scene" class="section editorial">
+      <div class="section-head editorial-head">
+        <span class="section-no">02</span>
+        <div>
+          <h2>场景作品</h2>
+          <p>风格化场景搭建、构件拼装与材质光影。</p>
+        </div>
+      </div>
+      <div id="scene-list" class="editorial-list"></div>
+    </section>
+
+    <section id="art" class="section editorial">
+      <div class="section-head editorial-head">
+        <span class="section-no">03</span>
+        <div>
+          <h2>模型 / 角色 / IP</h2>
+          <p>硬表面道具、Q 版角色建模与原创 IP 设计。</p>
+        </div>
+      </div>
+      <div id="art-grid" class="grid"></div>
+    </section>
+
+    <section id="sculpt" class="section editorial">
+      <div class="section-head editorial-head">
+        <span class="section-no">04</span>
+        <div>
+          <h2>ZBrush 雕刻</h2>
+          <p>高模造型雕刻 · 树皮根系与岩石块面。</p>
+        </div>
+      </div>
+      <div id="sculpt-list" class="editorial-list"></div>
+    </section>
+
+    <section id="about" class="section editorial">
+      <div class="section-head editorial-head">
+        <span class="section-no">05</span>
+        <div>
+          <h2>关于我</h2>
+        </div>
+      </div>
+      <div class="about-grid" id="about-root"></div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <p class="footer-name">旧缨宫 · 袁莉茹</p>
+      <p id="footer-contact"></p>
+    </div>
+  </footer>
+
+  <button id="to-top" class="to-top" type="button" aria-label="回到顶部" title="回到顶部">
+    <span class="to-top-icon">↑</span><span>回到顶部</span>
+  </button>
+
+  <!-- 详情弹层 -->
+  <div class="overlay" id="overlay" hidden>
+    <div class="overlay-backdrop" data-close></div>
+    <article class="overlay-panel" role="dialog" aria-modal="true" aria-labelledby="detail-title">
+      <button class="overlay-close" data-close aria-label="返回作品列表">← 返回</button>
+      <div id="detail-root"></div>
+    </article>
+  </div>
+
+  <!-- 图片灯箱：点击完整单独展示 -->
+  <div id="lightbox" class="lightbox" hidden>
+    <div class="lightbox-backdrop" data-lb-close></div>
+    <button class="lightbox-close" data-lb-close aria-label="关闭大图">×</button>
+    <button class="lightbox-nav lightbox-prev" data-lb-prev aria-label="上一张">‹</button>
+    <img class="lightbox-img" id="lightbox-img" alt="作品大图" />
+    <button class="lightbox-nav lightbox-next" data-lb-next aria-label="下一张">›</button>
+  </div>
+
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
